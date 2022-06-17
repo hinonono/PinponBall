@@ -9,16 +9,28 @@ public class MyGameManager : MonoBehaviour
     public int scoreMultiply = 1;
 
     public int ballsPerPlay = 10;
+    public int ballsUsed;
     public int ballsRemain;
 
     private GameObject[] pinCups;
+    private GameObject ballShooter;
 
     // Start is called before the first frame update
     void Start()
     {
         ballsRemain = ballsPerPlay;
-        pinCups = GameObject.FindGameObjectsWithTag("Cups");
 
+        try
+        {
+            ballShooter = GameObject.Find("Ball Shooter");
+            ballShooter.GetComponent<BallShooter>().onBallShot += useBall;
+        }
+        catch (System.NullReferenceException ex)
+        {
+            Debug.Log("沒有找到Ball Shooter");
+        }
+
+        pinCups = GameObject.FindGameObjectsWithTag("Cups");
         if (pinCups != null)
         {
             foreach (var pincup in pinCups)
@@ -26,6 +38,12 @@ public class MyGameManager : MonoBehaviour
                 pincup.GetComponentInChildren<Pincup>().onScoreAreaEntered += AddScore;
             }
         }
+    }
+
+    private void useBall()
+    {
+        ballsUsed += 1;
+        ballsRemain = ballsPerPlay - ballsUsed;
     }
 
     private void AddScore(int addScore)

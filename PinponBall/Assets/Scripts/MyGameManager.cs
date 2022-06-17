@@ -6,13 +6,12 @@ public class MyGameManager : MonoBehaviour
 {
 
     public int gameScore = 0;
+    public bool isSuperFeverTime = false;
     public int scoreMultiply = 1;
 
     public int ballsPerPlay = 10;
     public int ballsUsed;
     public int ballsRemain;
-
-    public Vector3 cameraPos;
 
     private GameObject[] pinCups;
 
@@ -31,6 +30,19 @@ public class MyGameManager : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if (ballsRemain == 1)
+        {
+            isSuperFeverTime = true;
+        }
+
+        if (isSuperFeverTime)
+        {
+            scoreMultiply = 10;
+        }
+    }
+
     private void useBall()
     {
         ballsUsed += 1;
@@ -44,7 +56,7 @@ public class MyGameManager : MonoBehaviour
 
     private void AddScore(int addScore)
     {
-        gameScore += addScore;
+        gameScore = gameScore + (addScore * scoreMultiply);
     }
 
     private void OnApplicationQuit()

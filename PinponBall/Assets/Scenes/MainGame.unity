@@ -130,18 +130,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 531629261, guid: 46117515c086b427282e3f463cbff9ec, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3658082923998408501, guid: 46117515c086b427282e3f463cbff9ec, type: 3}
-      propertyPath: m_IsKinematic
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3658082923998408501, guid: 46117515c086b427282e3f463cbff9ec, type: 3}
-      propertyPath: m_CollisionDetection
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3658082923998408522, guid: 46117515c086b427282e3f463cbff9ec, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -192,115 +180,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46117515c086b427282e3f463cbff9ec, type: 3}
---- !u!1 &531629260 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3658082923998408526, guid: 46117515c086b427282e3f463cbff9ec, type: 3}
-  m_PrefabInstance: {fileID: 8000028}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &531629261
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 531629260}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66cc7e558fc7c498a91ce975c9c2ebc3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myGameManager: {fileID: 0}
-  isBallShot: 0
-  isBallValid: 0
---- !u!1001 &613187378
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 531629261, guid: 46117515c086b427282e3f463cbff9ec, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3658082923998408501, guid: 46117515c086b427282e3f463cbff9ec, type: 3}
-      propertyPath: m_IsKinematic
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3658082923998408501, guid: 46117515c086b427282e3f463cbff9ec, type: 3}
-      propertyPath: m_CollisionDetection
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3658082923998408522, guid: 46117515c086b427282e3f463cbff9ec, type: 3}
-      propertyPath: m_RootOrder
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 3658082923998408522, guid: 46117515c086b427282e3f463cbff9ec, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3658082923998408522, guid: 46117515c086b427282e3f463cbff9ec, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.74
-      objectReference: {fileID: 0}
-    - target: {fileID: 3658082923998408522, guid: 46117515c086b427282e3f463cbff9ec, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.003
-      objectReference: {fileID: 0}
-    - target: {fileID: 3658082923998408522, guid: 46117515c086b427282e3f463cbff9ec, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3658082923998408522, guid: 46117515c086b427282e3f463cbff9ec, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3658082923998408522, guid: 46117515c086b427282e3f463cbff9ec, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3658082923998408522, guid: 46117515c086b427282e3f463cbff9ec, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3658082923998408522, guid: 46117515c086b427282e3f463cbff9ec, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3658082923998408522, guid: 46117515c086b427282e3f463cbff9ec, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3658082923998408522, guid: 46117515c086b427282e3f463cbff9ec, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3658082923998408526, guid: 46117515c086b427282e3f463cbff9ec, type: 3}
-      propertyPath: m_Name
-      value: PinBall (1)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 46117515c086b427282e3f463cbff9ec, type: 3}
---- !u!1 &613187379 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3658082923998408526, guid: 46117515c086b427282e3f463cbff9ec, type: 3}
-  m_PrefabInstance: {fileID: 613187378}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &613187380
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 613187379}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66cc7e558fc7c498a91ce975c9c2ebc3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myGameManager: {fileID: 0}
-  isBallShot: 0
-  isBallValid: 0
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -551,11 +430,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameScore: 0
+  isSuperFeverTime: 0
   scoreMultiply: 1
   ballsPerPlay: 10
   ballsUsed: 0
   ballsRemain: 0
-  cameraPos: {x: 0, y: 0, z: 0}
 --- !u!1 &1134822899
 GameObject:
   m_ObjectHideFlags: 0

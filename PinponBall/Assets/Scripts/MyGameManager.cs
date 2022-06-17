@@ -12,23 +12,14 @@ public class MyGameManager : MonoBehaviour
     public int ballsUsed;
     public int ballsRemain;
 
+    public Vector3 cameraPos;
+
     private GameObject[] pinCups;
-    private GameObject ballShooter;
 
     // Start is called before the first frame update
     void Start()
     {
         ballsRemain = ballsPerPlay;
-
-        try
-        {
-            ballShooter = GameObject.Find("Ball Shooter");
-            ballShooter.GetComponent<BallShooter>().onBallShot += useBall;
-        }
-        catch (System.NullReferenceException ex)
-        {
-            Debug.Log("沒有找到Ball Shooter");
-        }
 
         pinCups = GameObject.FindGameObjectsWithTag("Cups");
         if (pinCups != null)
@@ -43,6 +34,11 @@ public class MyGameManager : MonoBehaviour
     private void useBall()
     {
         ballsUsed += 1;
+        ballsRemain = ballsPerPlay - ballsUsed;
+    }
+
+    public void recaculateBall()
+    {
         ballsRemain = ballsPerPlay - ballsUsed;
     }
 

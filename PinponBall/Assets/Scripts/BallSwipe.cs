@@ -12,35 +12,22 @@ public class BallSwipe : MonoBehaviour
 	float throwForceInXandY = 1f; // to control throw force in X and Y directions
 
 	[SerializeField]
-	float throwForceInZ = 50f; // to control throw force in Z direction
+	float throwForceInZ = 10f; // to control throw force in Z direction
 
 	Rigidbody rb;
 
-	private MyGameManager myGameManager;
-
-	private Transform cameraPos;
-	private float ballOffset_y = 0.25f;
-	private float ballOffset_z = 0.4f;
-
-	private bool isBallShot = false;
-
-	private void Awake()
-	{
-		myGameManager = GameObject.Find("My Game Manager").GetComponent<MyGameManager>();
-	}
+	private BallManager ballManager;
 
 	private void Start()
 	{
-		cameraPos = Camera.main.transform;
+		ballManager = GetComponent<BallManager>();
 		rb = GetComponent<Rigidbody>();
-		setBallPosition();
 	}
 
 	// Update is called once per frame
 	private void Update()
 	{
-		setBallPosition();
-
+		
 		// if you touch the screen
 		if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
 		{
@@ -70,34 +57,15 @@ public class BallSwipe : MonoBehaviour
 			rb.isKinematic = false;
 			rb.AddForce(-direction.x * throwForceInXandY, -direction.y * throwForceInXandY, throwForceInZ / timeInterval);
 
-			isBallShot = true;
-			myGameManager.ballsUsed += 1;
-			myGameManager.recaculateBall();
+
+			ballManager.isBallShot = true;
+			ballManager.myGameManager.ballsUsed += 1;
+			ballManager.myGameManager.recaculateBall();
 
 			// Destroy ball in 4 seconds
 			//Destroy(gameObject, 3f);
 
 		}
 
-	}
-
-	private void setBallPosition()
-    {
-		if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
-		{
-			return;
-        }
-        else if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended)
-        {
-			return;
-        }
-        else if (isBallShot)
-        {
-			return;
-        }
-        else
-        {
-			gameObject.transform.position = new Vector3(cameraPos.position.x, cameraPos.position.y - ballOffset_y, cameraPos.position.z + ballOffset_z);
-		}
 	}
 }

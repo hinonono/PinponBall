@@ -13,6 +13,7 @@ public class MyGameManager : MonoBehaviour
     public int ballsUsed;
     public int ballsRemain;
 
+    public GameObject ball;
     private GameObject[] pinCups;
 
     // Start is called before the first frame update
@@ -43,15 +44,21 @@ public class MyGameManager : MonoBehaviour
         }
     }
 
-    private void useBall()
+    public void RecaculateBall()
     {
-        ballsUsed += 1;
         ballsRemain = ballsPerPlay - ballsUsed;
+
+        if (ballsRemain > 0)
+        {
+            InitializeBall();
+        }
     }
 
-    public void recaculateBall()
+    public void InitializeBall()
     {
-        ballsRemain = ballsPerPlay - ballsUsed;
+        //當Ground plane找到以後初始化球
+        Debug.Log("Instan");
+        Instantiate(ball);
     }
 
     private void AddScore(int addScore)

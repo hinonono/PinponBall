@@ -9,7 +9,10 @@ public class BallSwipe : MonoBehaviour
 	float touchTimeStart, touchTimeFinish, timeInterval; // to calculate swipe time to sontrol throw force in Z direction
 
 	[SerializeField]
-	float throwForceInXandY = 1f; // to control throw force in X and Y directions
+	float throwForceInX = 1f; // to control throw force in X and Y directions
+
+	[SerializeField]
+	float throwForceInY = 1f;
 
 	[SerializeField]
 	float throwForceInZ = 10f; // to control throw force in Z direction
@@ -55,15 +58,24 @@ public class BallSwipe : MonoBehaviour
 
 			// add force to balls rigidbody in 3D space depending on swipe time, direction and throw forces
 			rb.isKinematic = false;
-			rb.AddForce(-direction.x * throwForceInXandY, -direction.y * throwForceInXandY, throwForceInZ / timeInterval);
+			rb.AddForce(-direction.x * throwForceInX, -direction.y * throwForceInY, throwForceInZ / timeInterval);
 
 
 			ballManager.isBallShot = true;
-			ballManager.myGameManager.ballsUsed += 1;
-			ballManager.myGameManager.recaculateBall();
 
-			// Destroy ball in 4 seconds
-			//Destroy(gameObject, 3f);
+            if (ballManager.myGameManager.ballsUsed < ballManager.myGameManager.ballsPerPlay)
+            {
+				ballManager.myGameManager.ballsUsed += 1;
+			}
+
+			if (ballManager.myGameManager.ballsRemain > 0)
+			{
+				ballManager.myGameManager.RecaculateBall();
+			}
+
+			gameObject.GetComponent<BallSwipe>().enabled = false;
+            // Destroy ball in 4 seconds
+            Destroy(gameObject, 15f);
 
 		}
 

@@ -23,15 +23,15 @@ public class BallManager : MonoBehaviour
     private void Start()
     {
 		cameraPos = Camera.main.transform;
-		setBallPosition();
+		SetBallPosition();
 	}
 
     private void Update()
     {
-		setBallPosition();
+		SetBallPosition();
 	}
 
-	private void setBallPosition()
+	private void SetBallPosition()
 	{
 		if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
 		{

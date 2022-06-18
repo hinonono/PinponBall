@@ -8,4 +8,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainGame.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  m_configObjects: {}
+  m_configObjects:
+    UnityEditor.XR.ARKit.ARKitSettings: {fileID: 11400000, guid: 6db6a6574b9aa455d837cf99df157ce7, type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 49ec156ae22aa4e55acc4c98bdba0b7d, type: 2}

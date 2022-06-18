@@ -40,7 +40,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4102288447066752612}
-  m_Mesh: {fileID: -1263447274680015779, guid: 49cef389e77254dba89549b393108114, type: 3}
+  m_Mesh: {fileID: 3150097104606941334, guid: 49cef389e77254dba89549b393108114, type: 3}
 --- !u!23 &3028119785625445838
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -96,7 +96,7 @@ MeshCollider:
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: -803411294931262255, guid: 49cef389e77254dba89549b393108114, type: 3}
+  m_Mesh: {fileID: -803411294931262255, guid: 35f18f0c8efc64d7da83b469d8148bbe, type: 3}
 --- !u!1 &5352588718949287189
 GameObject:
   m_ObjectHideFlags: 0
@@ -262,4 +262,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 207b3b6f6900a4323b4a3dd06008a0a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cupScore: 25
+  cupScore: 20

@@ -15,7 +15,10 @@ public class BallSwipe : MonoBehaviour
 	float throwForceInY = 1f;
 
 	[SerializeField]
-	float throwForceInZ = 10f; // to control throw force in Z direction
+	float maxThrowForceInY = 150f;
+
+	[SerializeField]
+	float throwForceInZ = 4f; // to control throw force in Z direction
 
 	Rigidbody rb;
 
@@ -58,8 +61,16 @@ public class BallSwipe : MonoBehaviour
 
 			// add force to balls rigidbody in 3D space depending on swipe time, direction and throw forces
 			rb.isKinematic = false;
-			rb.AddForce(-direction.x * throwForceInX, -direction.y * throwForceInY, throwForceInZ / timeInterval);
+			rb.AddForce(-direction.x * throwForceInX, -direction.y * throwForceInY <= maxThrowForceInY ? -direction.y * throwForceInY : maxThrowForceInY, throwForceInZ / timeInterval);
 
+            if (-direction.y * throwForceInY <= maxThrowForceInY)
+            {
+				Debug.Log(-direction.y * throwForceInY);
+            }
+            else
+            {
+				Debug.Log(maxThrowForceInY);
+            }
 
 			ballManager.isBallShot = true;
 
@@ -74,8 +85,8 @@ public class BallSwipe : MonoBehaviour
 			}
 
 			gameObject.GetComponent<BallSwipe>().enabled = false;
-            // Destroy ball in 4 seconds
-            Destroy(gameObject, 15f);
+            // Destroy ball in 10 seconds
+            Destroy(gameObject, 10f);
 
 		}
 

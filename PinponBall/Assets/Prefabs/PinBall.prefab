@@ -128,7 +128,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   throwForceInX: 0.3
   throwForceInY: 0.3
-  throwForceInZ: 3
+  maxThrowForceInY: 105
+  throwForceInZ: 4
 --- !u!114 &7155701704500873883
 MonoBehaviour:
   m_ObjectHideFlags: 0

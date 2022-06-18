@@ -143,5 +143,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myGameManager: {fileID: 0}
+  ballOffset_y: -0.05
+  ballOffset_z: -0.1
   isBallShot: 0
   isBallValid: 0

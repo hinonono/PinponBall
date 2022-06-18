@@ -7,8 +7,8 @@ public class BallManager : MonoBehaviour
 	public MyGameManager myGameManager;
 
 	private Transform cameraPos;
-	private float ballOffset_y = 0.25f;
-	private float ballOffset_z = 0.4f;
+	public float ballOffset_y = 0.25f;
+	public float ballOffset_z = 0.4f;
 
 	//判斷這顆球射出去了沒
 	public bool isBallShot = false;
@@ -47,7 +47,7 @@ public class BallManager : MonoBehaviour
 		}
 		else
 		{
-            gameObject.transform.position = new Vector3(cameraPos.position.x, cameraPos.position.y - ballOffset_y, cameraPos.position.z + ballOffset_z);
+            gameObject.transform.position = new Vector3(cameraPos.position.x, cameraPos.position.y + ballOffset_y, cameraPos.position.z + ballOffset_z);
 		}
 	}
 

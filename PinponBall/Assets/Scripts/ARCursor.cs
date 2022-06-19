@@ -8,8 +8,11 @@ public class ARCursor : MonoBehaviour
     public GameObject cursorChildObject;
     public GameObject objectToPlace;
     public ARRaycastManager raycastManager;
+    public MyGameManager myGameManager;
 
     public bool useCursor = true;
+    public bool instantiateOnlyOnce = false;
+    private bool reachInstantiateLimit = false;
 
     void Start()
     {
@@ -27,7 +30,19 @@ public class ARCursor : MonoBehaviour
         {
             if (useCursor)
             {
-                GameObject.Instantiate(objectToPlace, transform.position, transform.rotation);
+                if (instantiateOnlyOnce == true && reachInstantiateLimit == false)
+                {
+                    GameObject.Instantiate(objectToPlace, transform.position, transform.rotation);
+                    myGameManager.InitializeBall();
+
+
+                    reachInstantiateLimit = true;
+                    gameObject.GetComponent<ARCursor>().enabled = false;
+                }
+                else
+                {
+                    GameObject.Instantiate(objectToPlace, transform.position, transform.rotation);
+                }
             }
             else
             {

@@ -13,6 +13,7 @@ public class MyGameManager : MonoBehaviour
     public int ballsUsed;
     public int ballsRemain;
 
+    public Transform instantiateBallPostion;
     public GameObject ball;
     private GameObject[] pinCups;
 
@@ -57,8 +58,7 @@ public class MyGameManager : MonoBehaviour
     public void InitializeBall()
     {
         //當Ground plane找到以後初始化球
-        Debug.Log("Instan");
-        Instantiate(ball);
+        Instantiate(ball, instantiateBallPostion);
     }
 
     private void AddScore(int addScore)

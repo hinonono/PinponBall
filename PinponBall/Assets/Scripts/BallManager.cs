@@ -6,7 +6,6 @@ public class BallManager : MonoBehaviour
 {
 	public MyGameManager myGameManager;
 
-	private Transform cameraPos;
 	public float ballOffset_y = 0.25f;
 	public float ballOffset_z = 0.4f;
 
@@ -22,7 +21,6 @@ public class BallManager : MonoBehaviour
 
     private void Start()
     {
-		cameraPos = Camera.main.transform;
 		SetBallPosition();
 	}
 
@@ -47,7 +45,7 @@ public class BallManager : MonoBehaviour
 		}
 		else
 		{
-            gameObject.transform.position = new Vector3(cameraPos.position.x, cameraPos.position.y + ballOffset_y, cameraPos.position.z + ballOffset_z);
+            gameObject.transform.position = new Vector3(myGameManager.instantiateBallPostion.position.x, myGameManager.instantiateBallPostion.position.y, myGameManager.instantiateBallPostion.position.z);
 		}
 	}
 

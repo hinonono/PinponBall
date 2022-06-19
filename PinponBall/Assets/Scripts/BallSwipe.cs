@@ -9,18 +9,16 @@ public class BallSwipe : MonoBehaviour
 	float touchTimeStart, touchTimeFinish, timeInterval; // to calculate swipe time to sontrol throw force in Z direction
 
 	[SerializeField]
-	float throwForceInX = 1f; // to control throw force in X and Y directions
-
+	float throwForceInX = 1f;
 	[SerializeField]
 	float throwForceInY = 1f;
-
 	[SerializeField]
 	float maxThrowForceInY = 150f;
-
 	[SerializeField]
-	float throwForceInZ = 4f; // to control throw force in Z direction
+	float throwForceInZ = 4f;
 
 	Rigidbody rb;
+	private Camera mainCam; 
 
 	private BallManager ballManager;
 
@@ -28,9 +26,9 @@ public class BallSwipe : MonoBehaviour
 	{
 		ballManager = GetComponent<BallManager>();
 		rb = GetComponent<Rigidbody>();
+		mainCam = Camera.main;
 	}
 
-	// Update is called once per frame
 	private void Update()
 	{
 		
@@ -61,7 +59,9 @@ public class BallSwipe : MonoBehaviour
 
 			// add force to balls rigidbody in 3D space depending on swipe time, direction and throw forces
 			rb.isKinematic = false;
-			rb.AddForce(-direction.x * throwForceInX, -direction.y * throwForceInY <= maxThrowForceInY ? -direction.y * throwForceInY : maxThrowForceInY, throwForceInZ / timeInterval);
+			//rb.AddForce(-direction.x * throwForceInX, -direction.y * throwForceInY <= maxThrowForceInY ? -direction.y * throwForceInY : maxThrowForceInY, throwForceInZ / timeInterval);
+			rb.AddForce(mainCam.transform.forward.x * throwForceInX, mainCam.transform.forward.y * throwForceInY <= maxThrowForceInY ? mainCam.transform.forward.y * throwForceInY : maxThrowForceInY, mainCam.transform.forward.z * throwForceInZ);
+
 
             if (-direction.y * throwForceInY <= maxThrowForceInY)
             {

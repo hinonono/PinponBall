@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,8 @@ using UnityEngine.XR.ARFoundation;
 
 public class ARCursor : MonoBehaviour
 {
+    public event Action OnObjectPlaced;
+
     public GameObject cursorChildObject;
     public GameObject objectToPlace;
     public ARRaycastManager raycastManager;
@@ -34,7 +37,7 @@ public class ARCursor : MonoBehaviour
                 {
                     GameObject.Instantiate(objectToPlace, transform.position, transform.rotation);
                     myGameManager.InitializeBall();
-
+                    OnObjectPlaced.Invoke();
 
                     reachInstantiateLimit = true;
                     gameObject.GetComponent<ARCursor>().enabled = false;

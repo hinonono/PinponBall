@@ -62,16 +62,6 @@ public class BallSwipe : MonoBehaviour
 			//rb.AddForce(-direction.x * throwForceInX, -direction.y * throwForceInY <= maxThrowForceInY ? -direction.y * throwForceInY : maxThrowForceInY, throwForceInZ / timeInterval);
 			rb.AddForce(mainCam.transform.forward.x * throwForceInX, mainCam.transform.forward.y * throwForceInY <= maxThrowForceInY ? mainCam.transform.forward.y * throwForceInY : maxThrowForceInY, mainCam.transform.forward.z * throwForceInZ);
 
-
-            if (-direction.y * throwForceInY <= maxThrowForceInY)
-            {
-				Debug.Log(-direction.y * throwForceInY);
-            }
-            else
-            {
-				Debug.Log(maxThrowForceInY);
-            }
-
 			ballManager.isBallShot = true;
 
             if (ballManager.myGameManager.ballsUsed < ballManager.myGameManager.ballsPerPlay)

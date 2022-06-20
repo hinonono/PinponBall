@@ -127,9 +127,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   throwForceInX: 0.3
-  throwForceInY: 0.3
-  maxThrowForceInY: 105
-  throwForceInZ: 4
+  throwForceInY: -0.3
+  maxThrowForceInY: -105
+  throwForceInZ: 10
 --- !u!114 &7155701704500873883
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,7 +143,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myGameManager: {fileID: 0}
-  ballOffset_y: -0.05
-  ballOffset_z: 0.15
+  ballOffset_y: -0.03
+  ballOffset_z: 0.11
   isBallShot: 0
   isBallValid: 0

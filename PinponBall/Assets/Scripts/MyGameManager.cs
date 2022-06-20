@@ -51,14 +51,17 @@ public class MyGameManager : MonoBehaviour
 
         if (ballsRemain > 0)
         {
+            StartCoroutine(InstantiateDelay());
             InitializeBall();
         }
     }
 
     public void InitializeBall()
     {
+        //建立一個獨立的pos避免球被生成為子物件
+        Vector3 pos = instantiateBallPostion.transform.position;
         //當Ground plane找到以後初始化球
-        Instantiate(ball, instantiateBallPostion);
+        Instantiate(ball, pos, Quaternion.identity);
     }
 
     private void AddScore(int addScore)
@@ -75,5 +78,11 @@ public class MyGameManager : MonoBehaviour
                 pincup.GetComponentInChildren<Pincup>().onScoreAreaEntered -= AddScore;
             }
         }
+    }
+
+    IEnumerator InstantiateDelay()
+    {
+        //替球的生成加上1秒的延遲
+        yield return new WaitForSeconds(1);
     }
 }

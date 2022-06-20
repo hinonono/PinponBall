@@ -15,7 +15,7 @@ public class BallSwipe : MonoBehaviour
 	[SerializeField]
 	float maxThrowForceInY = 150f;
 	[SerializeField]
-	float throwForceInZ = 4f;
+	float throwForceInZ = 12f;
 
 	Rigidbody rb;
 	private Camera mainCam; 
@@ -60,7 +60,9 @@ public class BallSwipe : MonoBehaviour
 			// add force to balls rigidbody in 3D space depending on swipe time, direction and throw forces
 			rb.isKinematic = false;
 			//rb.AddForce(-direction.x * throwForceInX, -direction.y * throwForceInY <= maxThrowForceInY ? -direction.y * throwForceInY : maxThrowForceInY, throwForceInZ / timeInterval);
-			rb.AddForce(mainCam.transform.forward.x * throwForceInX, mainCam.transform.forward.y * throwForceInY <= maxThrowForceInY ? mainCam.transform.forward.y * throwForceInY : maxThrowForceInY, mainCam.transform.forward.z * throwForceInZ);
+			//rb.AddRelativeForce(mainCam.transform.forward.x * throwForceInX, mainCam.transform.forward.y * throwForceInY <= maxThrowForceInY ? mainCam.transform.forward.y * throwForceInY : maxThrowForceInY, mainCam.transform.forward.z * throwForceInZ, ForceMode.Force);
+			rb.AddRelativeForce(transform.forward * throwForceInZ);
+
 
 			ballManager.isBallShot = true;
 

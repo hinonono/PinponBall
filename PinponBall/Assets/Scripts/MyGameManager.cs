@@ -83,6 +83,6 @@ public class MyGameManager : MonoBehaviour
     IEnumerator InstantiateDelay()
     {
         //替球的生成加上1秒的延遲
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(4);
     }
 }

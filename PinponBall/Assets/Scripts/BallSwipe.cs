@@ -61,7 +61,7 @@ public class BallSwipe : MonoBehaviour
 			rb.isKinematic = false;
 			//rb.AddForce(-direction.x * throwForceInX, -direction.y * throwForceInY <= maxThrowForceInY ? -direction.y * throwForceInY : maxThrowForceInY, throwForceInZ / timeInterval);
 			//rb.AddRelativeForce(mainCam.transform.forward.x * throwForceInX, mainCam.transform.forward.y * throwForceInY <= maxThrowForceInY ? mainCam.transform.forward.y * throwForceInY : maxThrowForceInY, mainCam.transform.forward.z * throwForceInZ, ForceMode.Force);
-			rb.AddForce(transform.forward * throwForceInZ);
+			rb.AddForce(mainCam.transform.forward * throwForceInZ);
 
 
 			ballManager.isBallShot = true;

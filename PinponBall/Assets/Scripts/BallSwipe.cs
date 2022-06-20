@@ -15,7 +15,7 @@ public class BallSwipe : MonoBehaviour
 	[SerializeField]
 	float maxThrowForceInY = 150f;
 	[SerializeField]
-	float throwForceInZ = 12f;
+	float throwForceInZ = 100f;
 
 	Rigidbody rb;
 	private Camera mainCam; 

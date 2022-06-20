@@ -51,8 +51,7 @@ public class MyGameManager : MonoBehaviour
 
         if (ballsRemain > 0)
         {
-            StartCoroutine(InstantiateDelay());
-            InitializeBall();
+            StartCoroutine(InstantiateDelay()); 
         }
     }
 
@@ -83,6 +82,7 @@ public class MyGameManager : MonoBehaviour
     IEnumerator InstantiateDelay()
     {
         //替球的生成加上1秒的延遲
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(3);
+        InitializeBall();
     }
 }

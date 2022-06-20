@@ -41,6 +41,7 @@ public class ARCursor : MonoBehaviour
 
                     reachInstantiateLimit = true;
                     gameObject.GetComponent<ARCursor>().enabled = false;
+                    gameObject.SetActive(false);
                 }
                 else
                 {

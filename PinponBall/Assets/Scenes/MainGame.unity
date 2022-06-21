@@ -1431,7 +1431,7 @@ MonoBehaviour:
   gameScore: 0
   isSuperFeverTime: 0
   scoreMultiply: 1
-  ballsPerPlay: 50
+  ballsPerPlay: 15
   ballsUsed: 0
   ballsRemain: 0
   instantiateBallPostion: {fileID: 1424647520}

@@ -129,7 +129,7 @@ MonoBehaviour:
   throwForceInX: 0.3
   throwForceInY: -0.3
   maxThrowForceInY: -105
-  throwForceInZ: 50
+  throwForceInZ: 20
 --- !u!114 &7155701704500873883
 MonoBehaviour:
   m_ObjectHideFlags: 0

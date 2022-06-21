@@ -6,6 +6,9 @@ using UnityEngine;
 public class MyGameManager : MonoBehaviour
 {
     public event Action OnSFTStarted;
+    public event Action OnGameEnded;
+
+    [SerializeField]private UIManager uIManager;
 
     public int gameScore = 0;
     public bool isSuperFeverTime = false;
@@ -32,6 +35,8 @@ public class MyGameManager : MonoBehaviour
                 pincup.GetComponentInChildren<Pincup>().onScoreAreaEntered += AddScore;
             }
         }
+
+        this.OnGameEnded += LoadResult;
     }
 
     private void Update()
@@ -45,6 +50,12 @@ public class MyGameManager : MonoBehaviour
         {
             scoreMultiply = 10;
             OnSFTStarted.Invoke();
+        }
+
+        if (ballsRemain == 0)
+        {
+
+            OnGameEnded.Invoke();
         }
     }
 
@@ -87,5 +98,15 @@ public class MyGameManager : MonoBehaviour
         //替球的生成加上3秒的延遲
         yield return new WaitForSeconds(3);
         InitializeBall();
+    }
+
+    private void LoadResult()
+    {
+        uIManager.LoadScene("Score");
+    }
+
+    private void OnDisable()
+    {
+        this.OnGameEnded -= LoadResult;
     }
 }

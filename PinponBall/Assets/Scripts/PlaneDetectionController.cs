@@ -27,10 +27,12 @@ public class PlaneDetectionController : MonoBehaviour
     private void stopPlaneDetection()
     {
         aRPlaneManager.enabled = false;
+        aRCursor.enabled = false;
     }
 
     public void StartPlaneDetection()
     {
         aRPlaneManager.enabled = true;
+        aRCursor.enabled = true;
     }
 }

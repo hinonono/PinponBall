@@ -28,4 +28,9 @@ public class PlaneDetectionController : MonoBehaviour
     {
         aRPlaneManager.enabled = false;
     }
+
+    public void StartPlaneDetection()
+    {
+        aRPlaneManager.enabled = true;
+    }
 }

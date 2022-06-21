@@ -1,9 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class MyGameManager : MonoBehaviour
 {
+    public event Action OnSFTStarted;
 
     public int gameScore = 0;
     public bool isSuperFeverTime = false;
@@ -42,6 +44,7 @@ public class MyGameManager : MonoBehaviour
         if (isSuperFeverTime)
         {
             scoreMultiply = 10;
+            OnSFTStarted.Invoke();
         }
     }
 
@@ -81,7 +84,7 @@ public class MyGameManager : MonoBehaviour
 
     IEnumerator InstantiateDelay()
     {
-        //替球的生成加上1秒的延遲
+        //替球的生成加上3秒的延遲
         yield return new WaitForSeconds(3);
         InitializeBall();
     }

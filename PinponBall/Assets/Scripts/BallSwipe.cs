@@ -80,6 +80,12 @@ public class BallSwipe : MonoBehaviour
             // Destroy ball in 10 seconds
             Destroy(gameObject, 10f);
 
+
+			//專門處理最後一顆球被破壞後的情況
+            if (ballManager.myGameManager.ballsRemain == 0)
+            {
+				ballManager.myGameManager.RecaculateBall();
+            }
 		}
 
 	}

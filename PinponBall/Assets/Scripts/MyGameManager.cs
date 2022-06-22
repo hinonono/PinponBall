@@ -51,12 +51,6 @@ public class MyGameManager : MonoBehaviour
             scoreMultiply = 10;
             OnSFTStarted.Invoke();
         }
-
-        if (ballsRemain == 0)
-        {
-
-            OnGameEnded.Invoke();
-        }
     }
 
     public void RecaculateBall()
@@ -66,6 +60,11 @@ public class MyGameManager : MonoBehaviour
         if (ballsRemain > 0)
         {
             StartCoroutine(InstantiateDelay()); 
+        }
+
+        if (ballsRemain == 0)
+        {
+            OnGameEnded.Invoke();
         }
     }
 

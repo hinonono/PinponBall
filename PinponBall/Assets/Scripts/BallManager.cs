@@ -31,22 +31,10 @@ public class BallManager : MonoBehaviour
 
 	private void SetBallPosition()
 	{
-		//if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
-		//{
-		//	return;
-		//}
-		//else if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended)
-		//{
-		//	return;
-		//}
-		//else if (isBallShot)
-		//{
-		//	return;
-		//}
 
         if (isBallShot == false)
 		{
-            gameObject.transform.position = new Vector3(myGameManager.instantiateBallPostion.position.x, myGameManager.instantiateBallPostion.position.y, myGameManager.instantiateBallPostion.position.z);
+            //gameObject.transform.position = new Vector3(myGameManager.instantiateBallPostion.position.x, myGameManager.instantiateBallPostion.position.y, myGameManager.instantiateBallPostion.position.z);
 		}
         else
         {

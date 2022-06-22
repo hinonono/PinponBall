@@ -11,7 +11,9 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private GameObject startScanningModal;
     [SerializeField]
-    private GameObject mainInterface;
+    private GameObject mainGameInterfaceObj;
+
+    public MainGameInterface mainGameInterface;
 
     private ARCursor aRCursor;
 
@@ -20,11 +22,13 @@ public class UIManager : MonoBehaviour
     {
         aRCursor = GameObject.Find("AR Cursor").GetComponent<ARCursor>();
         aRCursor.OnObjectPlaced += ObjectPlaced;
+
+        mainGameInterface = mainGameInterfaceObj.GetComponent<MainGameInterface>();
     }
 
     public void ObjectPlaced()
     {
-        mainInterface.SetActive(true);
+        mainGameInterfaceObj.SetActive(true);
     }
 
     public void DismissScanModal()

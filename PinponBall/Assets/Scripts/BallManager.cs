@@ -17,6 +17,9 @@ public class BallManager : MonoBehaviour
 	private void Awake()
 	{
 		myGameManager = GameObject.Find("My Game Manager").GetComponent<MyGameManager>();
+
+		myGameManager.uIManager.mainGameInterface.onPauseModalOpened += SetBallSwipeEnable;
+		myGameManager.uIManager.mainGameInterface.onPauseModalClosed += SetBallSwipeDisable;
 	}
 
     private void Start()
@@ -29,17 +32,36 @@ public class BallManager : MonoBehaviour
 		SetBallPosition();
 	}
 
+
+
 	private void SetBallPosition()
 	{
 
         if (isBallShot == false)
 		{
-            //gameObject.transform.position = new Vector3(myGameManager.instantiateBallPostion.position.x, myGameManager.instantiateBallPostion.position.y, myGameManager.instantiateBallPostion.position.z);
+            gameObject.transform.position = new Vector3(myGameManager.instantiateBallPostion.position.x, myGameManager.instantiateBallPostion.position.y, myGameManager.instantiateBallPostion.position.z);
 		}
         else
         {
 			return;
         }
+	}
+
+	private void SetBallSwipeEnable()
+    {
+		gameObject.GetComponent<BallSwipe>().enabled = true;
+    }
+
+	private void SetBallSwipeDisable()
+    {
+		gameObject.GetComponent<BallSwipe>().enabled = false;
+	}
+
+
+	private void OnDisable()
+    {
+		myGameManager.uIManager.mainGameInterface.onPauseModalOpened -= SetBallSwipeEnable;
+		myGameManager.uIManager.mainGameInterface.onPauseModalClosed -= SetBallSwipeDisable;
 	}
 
 }

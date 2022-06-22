@@ -8,7 +8,7 @@ public class MyGameManager : MonoBehaviour
     public event Action OnSFTStarted;
     public event Action OnGameEnded;
 
-    [SerializeField]private UIManager uIManager;
+    [SerializeField]public UIManager uIManager;
 
     public int gameScore = 0;
     public bool isSuperFeverTime = false;

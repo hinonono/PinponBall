@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,10 @@ using TMPro;
 
 public class MainGameInterface : MonoBehaviour
 {
+    public event Action onPauseModalOpened;
+    public event Action onPauseModalClosed;
+
+
     private MyGameManager myGameManager;
 
     [SerializeField]
@@ -25,6 +30,15 @@ public class MainGameInterface : MonoBehaviour
     {
         scoreText.text = myGameManager.gameScore.ToString();
         remainBallText.text = myGameManager.ballsRemain.ToString();
+
+        if (pauseModal.activeSelf == true)
+        {
+            onPauseModalOpened.Invoke();
+        }
+        else
+        {
+            onPauseModalClosed.Invoke();
+        }
     }
 
     public void TogglePauseModal()
